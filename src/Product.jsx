@@ -2,6 +2,7 @@ import React from 'react'
 import Card from './Card'
 
 export default function Product(props) {
+  
   return (
     <React.Fragment>
 <div className="btns">
@@ -14,9 +15,11 @@ export default function Product(props) {
 <button value="bayc" onClick={props.handleBtns}>#BAYC</button>
 </div>
 <div className="wrapper">
+  
     {props.products.map(prod=>{
       return <Card key={prod.id} prod={prod}/>
     })}
+
 </div>
     </React.Fragment>
     

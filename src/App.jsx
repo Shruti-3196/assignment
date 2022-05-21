@@ -6,7 +6,7 @@ class App extends Component {
 
     state={
         products:Data,
-        productLists:[]
+        productLists:Data
     }
 
     //filtering button
@@ -14,11 +14,7 @@ class App extends Component {
         console.log(e.target.value);
 
         let productLists;
-        if(e.target.value === 'Null'){
-            return (
-                <h2>No Item Found</h2>
-            )
-        } else {
+        if(e.target.value){
             productLists=this.state.products.filter(item=>item.cat===e.target.value)
         }
 
@@ -33,6 +29,7 @@ class App extends Component {
                 <h1>Live Spaces</h1>
                 <p>All NTF's on Cyber either belongs to or were minted by thier space creator</p>
                 <Product products={this.state.productLists} handleBtns={this.handleBtns}/>
+                
             </div>
         );
     }
